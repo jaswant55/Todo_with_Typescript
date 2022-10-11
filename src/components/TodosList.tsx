@@ -15,10 +15,11 @@ const TodosList: React.FC<Props> = ({todos, setTodos}: Props) => {
               <SingleTodo todo={todo} key={todo.id}
               todos={todos}
               setTodos={setTodos}
-              />
+              
+              />  
             ))}
     </div>
   )
 }
 
-export default TodosList;
+export default React.memo(TodosList);
