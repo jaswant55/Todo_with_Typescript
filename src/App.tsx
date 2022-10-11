@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React,{useEffect, useState} from 'react';
 
 import './App.css';
 import TodoInput from './components/TodoInput';
@@ -59,7 +59,11 @@ const App: React.FC =() =>{
 
   }
 
-  console.log(todos)
+  useEffect(()=>{
+      localStorage.setItem('datakey', JSON.stringify(todo));
+  },[todo])
+
+  console.log('todos',todos)
   return (
     <>
     <h2>ToDo App with TypeScript</h2>
@@ -69,4 +73,4 @@ const App: React.FC =() =>{
   );
 }
 
-export default App;
+export default React.memo(App);

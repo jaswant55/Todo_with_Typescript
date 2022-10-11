@@ -35,4 +35,4 @@ const TodoInput= ({todo, setTodo, handleSubmit}: Props) => {
   )
 }
 
-export default TodoInput;
+export default React.memo(TodoInput);
